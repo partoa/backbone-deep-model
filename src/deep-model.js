@@ -121,7 +121,8 @@
       setNested(obj, path, null, { unset: true });
     }
 
-    var DeepModel = Backbone.Model.extend({
+    var Model = Backbone.RelationalModel || Backbone.Model;
+    var DeepModel = Model.extend({
 
         // Override constructor
         // Support having nested defaults by using _.deepExtend instead of _.extend
